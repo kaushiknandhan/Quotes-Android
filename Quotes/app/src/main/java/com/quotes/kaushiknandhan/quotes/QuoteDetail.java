@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
+ * This class is used to find details of a particular list-data.
  * Created by kaushik nandhan on 2/24/2017.
  */
 
@@ -23,14 +24,11 @@ public class QuoteDetail extends AppCompatActivity {
         setContentView(R.layout.quote_detail);
         Intent i = getIntent();
         mPosition = i.getIntExtra("position", 0);
-
         mDataSource = new DataSource();
         mImageView = (ImageView) findViewById(R.id.image);
         mQuote = (TextView) findViewById(R.id.quote);
-
         mImageView.setImageResource(mDataSource.getmPhotoHdPool().
                 get(mPosition));
-
         mQuote.setText(getResources().getString(mDataSource.getmQuotePool()
                 .get(mPosition)));
 

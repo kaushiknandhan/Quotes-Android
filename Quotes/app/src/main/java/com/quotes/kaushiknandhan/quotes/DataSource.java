@@ -3,6 +3,7 @@ package com.quotes.kaushiknandhan.quotes;
 import java.util.ArrayList;
 
 /**
+ * DataSource is a class which adds the list of images and quotes and returns the same when called.
  * Created by kaushik nandhan on 2/23/2017.
  */
 
@@ -14,11 +15,9 @@ public class DataSource {
     public ArrayList<Integer> getmPhotoHdPool() {
         return mPhotoHdPool;
     }
-
     public ArrayList<Integer> getmPhotoPool() {
         return mPhotoPool;
     }
-
     public ArrayList<Integer> getmQuotePool() {
         return mQuotePool;
     }
@@ -26,6 +25,7 @@ public class DataSource {
         return mPhotoPool.size();
     }
 
+    // Using constructor to initialize the ArrayList, add all the images and quotes in the list.
     public DataSource() {
         mPhotoPool = new ArrayList();
         mQuotePool = new ArrayList();
@@ -33,8 +33,8 @@ public class DataSource {
         setupPhotoPool();
         setupQuotePool();
         setupPhotoHDPool();
-
     }
+    // adding images to the List
     private void setupPhotoPool() {
         mPhotoPool.add(R.drawable.steve_1);
         mPhotoPool.add(R.drawable.steve_2);
@@ -52,6 +52,7 @@ public class DataSource {
 //        mPhotoPool.add(R.drawable.steve_9);
 //        mPhotoPool.add(R.drawable.steve_10);
     }
+    // adding strings to the List
     private void setupQuotePool() {
         mQuotePool.add(R.string.quote_1);
         mQuotePool.add(R.string.quote_2);
@@ -71,6 +72,7 @@ public class DataSource {
 //        mQuotePool.add(R.string.quote_10);
 
     }
+    // adding HD images to the list
     private void setupPhotoHDPool() {
         mPhotoHdPool.add(R.drawable.steve_hd_1);
         mPhotoHdPool.add(R.drawable.steve_hd_2);

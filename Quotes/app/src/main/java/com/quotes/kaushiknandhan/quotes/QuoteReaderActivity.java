@@ -21,23 +21,17 @@ import com.google.android.gms.common.api.GoogleApiClient;
 
 public class QuoteReaderActivity extends AppCompatActivity {
 
-
+    // Adapter class used to get the list of quotes.
     public class QuoteAdapter extends BaseAdapter {
-
         private Context mContext;
         private LayoutInflater mInflator;
         private DataSource mDataSource;
-
-
-
         public QuoteAdapter(Context c) {
             mContext = c;
             mInflator = (LayoutInflater)
                     mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             mDataSource = new DataSource();
         }
-
-
         @Override
         public int getCount() {
             return mDataSource.getDataSourceLength();
@@ -52,7 +46,7 @@ public class QuoteReaderActivity extends AppCompatActivity {
         public long getItemId(int position) {
             return position;
         }
-
+        // This method is used to get a view that displays the data at the specified position in the data set.
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             ImageView thumbnail;
@@ -69,19 +63,14 @@ public class QuoteReaderActivity extends AppCompatActivity {
             return convertView;
         }
     }
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quote_reader);
         ListView mListView = (ListView) findViewById(R.id.quotes_list);
         mListView.setAdapter(new QuoteAdapter(this));
-
+        // Add click listener to show the details of particular qoute
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
             @Override
             public void onItemClick(AdapterView arg0, View arg1, int position,
                                     long arg3) {
@@ -90,8 +79,6 @@ public class QuoteReaderActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
-
     }
 }
 
